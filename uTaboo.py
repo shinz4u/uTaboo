@@ -82,6 +82,7 @@ class uTaboo:
 
     def filterExtraWords(self,word1,listOfWords1):
         x = [word for word in listOfWords1 if word not in stopwords.words('english')]
+        word1=word1[0:len(word1)-1]
         otherWords=[word1,word1+'s']
         x = [word for word in x if word not in otherWords]
         return x
