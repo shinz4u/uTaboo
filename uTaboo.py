@@ -6,6 +6,7 @@ import operator
 import random
 from nltk.corpus import stopwords
 import json
+import re
 
 class uTaboo:
 
@@ -19,7 +20,7 @@ class uTaboo:
             newlist.append(line)
         #print newlist
         choice1=random.choice(newlist)
-        print choice1
+        #print choice1
         return choice1
         
 
@@ -28,17 +29,26 @@ class uTaboo:
     	searchkey="https://www.googleapis.com/customsearch/v1?key=AIzaSyA4JLIQy1RNDH_n5UNZcmc1xPGOiV2EiiM&cx=008405862994369354446:bveyst4i9v0&q="
     	query=pickedWord
     	response = urllib2.urlopen(searchkey+query)
+
     	html = response.read()
+    	#print html
     	data = json.loads(html)
     	for x in data["items"]:
     		#print x["formattedUrl"]
-    		urls.append(x["formattedUrl"])
+
+    		urls.append(x["link"])
     	return urls
     	pass
         
         
     def fetchHTML(self,url):
-    	req = urllib2.Request('http://www.google.com')
+    	#if url.find("www")==-1:
+    	#	url="www."+url
+    	#if str(url).find("http://")==-1:
+    	#	url="http://"+str(url)
+
+    	print url
+    	req = urllib2.Request(url)
     	response = urllib2.urlopen(req)
     	rawHtml = response.read()
         return rawHtml
@@ -63,17 +73,26 @@ class uTaboo:
     def getUnprocessed(self,pickedWord):
     	myUrls = self.getGoogledURLS(pickedWord)
     	textData=""
+    	print myUrls
     	for myUrl in myUrls:
-    		rawHtml = self.fetchHTML(myUrl)
-    		neathtml=self.stripScript(rawHtml)
-    		textData=textData+" " + self.html2Text(neathtml)
+    		if myUrl.find(".pdf")==-1:
+    			print "\nopen.."
+	    		rawHtml = self.fetchHTML(myUrl)
+	    		neathtml=self.stripScript(rawHtml)
+	    		#print neathtml
+	    		textData=textData+" " + self.html2Text(neathtml)
 
+    	#print textData
         return textData
    
     # Second Module
 
-    def filterStopWords(self,listOfWords):   
-        return [ word for word in listOfWords if word not in stopwords.words('english') ]
+    def filterStopWords(self,listOfWords1): 
+
+    	#print listOfWords1
+
+    	#print stopwords.words('english')
+        return [word for word in listOfWords1 if word not in stopwords.words('english')]
         
     def getRankedList(self,filteredListofWords):
         rankedListOfWords={}
@@ -86,11 +105,14 @@ class uTaboo:
     def fetchTop6(self,rankedListOfWords):
         ranked = sorted(rankedListOfWords.iteritems(), key=operator.itemgetter(1),reverse=True)
         tabooWords=[x for (x,y) in ranked]
-        return tabooWords
+
+        return tabooWords[0:6]
         
         
     def getTabooWords(self,word,listOfWords):
+
         filteredListofWords=self.filterStopWords(listOfWords)
+        #print filteredListofWords
         rankedListOfWords=self.getRankedList(filteredListofWords)
         tabooWords=self.fetchTop6(rankedListOfWords)
 
@@ -103,7 +125,9 @@ x = uTaboo()
 word1=x.pickWord()
 print word1
 unProText=x.getUnprocessed(word1)
+unProText=re.sub(r'[^\w]', ' ', unProText)
 
+unProText=[y.lower() for y in unProText.split()]
 print x.getTabooWords(word1,unProText)
 
 #print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
