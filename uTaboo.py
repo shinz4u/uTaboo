@@ -42,10 +42,6 @@ class uTaboo:
         
         
     def fetchHTML(self,url):
-    	#if url.find("www")==-1:
-    	#	url="www."+url
-    	#if str(url).find("http://")==-1:
-    	#	url="http://"+str(url)
 
     	print url
     	req = urllib2.Request(url)
@@ -84,8 +80,16 @@ class uTaboo:
 
     	#print textData
         return textData
-   
+
     # Second Module
+
+    def sanitizeWords(self,listOfWords):   # takes input text. output: split sanitized words
+    	sanitized=re.sub(r'[^\w]', ' ', listOfWords)
+    	sanitized=[y.lower() for y in sanitized.split()]
+    	return sanitized
+    	pass
+   
+    
 
     def filterStopWords(self,listOfWords1): 
 
@@ -125,9 +129,8 @@ x = uTaboo()
 word1=x.pickWord()
 print word1
 unProText=x.getUnprocessed(word1)
-unProText=re.sub(r'[^\w]', ' ', unProText)
+sanitizedWords=x.sanitizeWords(unProText)
 
-unProText=[y.lower() for y in unProText.split()]
-print x.getTabooWords(word1,unProText)
+print x.getTabooWords(word1,sanitizedWords)
 
 #print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
