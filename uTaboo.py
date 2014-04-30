@@ -1,5 +1,7 @@
 
 from bs4 import BeautifulSoup
+import urllib2
+import nltk
 class uTaboo:
 
     def __init__(self):
@@ -14,11 +16,21 @@ class uTaboo:
         pass
         
         
-    def fetchHTML(url):
-        return htmlData
+    def fetchHTML(self,url):
+    	req = urllib2.Request('http://www.google.com')
+    	response = urllib2.urlopen(req)
+    	rawHtml = response.read()
+        return rawHtml
         pass
+
+     	#used ntlk to remove for now. Use beautiful soup to do that as well. Details in this link
+    	# http://stackoverflow.com/questions/22799990/beatifulsoup4-get-text-still-has-javascript
+    def stripScript(self,rawHtml):
+     	cleanedHtml=nltk.clean_html(rawHtml)
+     	return cleanedHtml
+     	pass
         
-    def getAllHTMS(urls):
+    def getAllhtmls(urls):
         #use fetchHTML(url) to obtain a concatenated list of htmldata
         pass
         
@@ -26,7 +38,16 @@ class uTaboo:
     	soup = BeautifulSoup(htmlData)
         return soup.get_text()
         pass
-        
+
+    def getUnprocessed(pickedWord):
+    	myUrls = getGoogledURLS(pickedWord)
+    	textData=""
+    	for myUrl in myUrls:
+    		rawHtml = self.fetchHTML(myUrl)
+    		neathtml=self.stripScript(rawHtml)
+    		textData=textData+" " + self.html2Text(neathtml)
+
+        return textData
    
     # Second Module
 
