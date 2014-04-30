@@ -4,21 +4,26 @@ import urllib2
 import nltk
 import operator
 import random
+from nltk.corpus import stopwords
+import json
+
 class uTaboo:
 
     def __init__(self):
         pass
 
     def pickWord(file1='en-US.dic'):
-        dictionary = open(file1)
+        dictionary = open('en-US.dic')
         newlist=[]
-        for line in newlist:
+        for line in dictionary:
             newlist.append(line)
-        choice=random.choice(newlist)
-        return choice
+        #print newlist
+        choice1=random.choice(newlist)
+        print choice1
+        return choice1
         
 
-    def getGoogledURLS(pickedWord):
+    def getGoogledURLS(self,pickedWord):
     	urls=[]
     	searchkey="https://www.googleapis.com/customsearch/v1?key=AIzaSyA4JLIQy1RNDH_n5UNZcmc1xPGOiV2EiiM&cx=008405862994369354446:bveyst4i9v0&q="
     	query=pickedWord
@@ -28,7 +33,7 @@ class uTaboo:
     	for x in data["items"]:
     		#print x["formattedUrl"]
     		urls.append(x["formattedUrl"])
-    		return urls
+    	return urls
     	pass
         
         
@@ -46,17 +51,17 @@ class uTaboo:
      	return cleanedHtml
      	pass
         
-    def getAllhtmls(urls):
+    def getAllhtmls(self,urls):
         #use fetchHTML(url) to obtain a concatenated list of htmldata
         pass
         
-    def html2Text(htmlData):
+    def html2Text(self,htmlData):
     	soup = BeautifulSoup(htmlData)
         return soup.get_text()
         pass
 
-    def getUnprocessed(pickedWord):
-    	myUrls = getGoogledURLS(pickedWord)
+    def getUnprocessed(self,pickedWord):
+    	myUrls = self.getGoogledURLS(pickedWord)
     	textData=""
     	for myUrl in myUrls:
     		rawHtml = self.fetchHTML(myUrl)
@@ -67,9 +72,8 @@ class uTaboo:
    
     # Second Module
 
-    def filterStopWords(listOfWords):
-        
-        return filteredListofWords
+    def filterStopWords(self,listOfWords):   
+        return [ word for word in listOfWords if word not in stopwords.words('english') ]
         
     def getRankedList(self,filteredListofWords):
         rankedListOfWords={}
@@ -79,21 +83,27 @@ class uTaboo:
             rankedListOfWords[i]=rankedListOfWords[i]+1
         return rankedListOfWords
 
-    def fetchTop6(rankedListOfWords):
+    def fetchTop6(self,rankedListOfWords):
         ranked = sorted(rankedListOfWords.iteritems(), key=operator.itemgetter(1),reverse=True)
         tabooWords=[x for (x,y) in ranked]
         return tabooWords
         
         
-    def getTabooWords(word,listOfWords):
+    def getTabooWords(self,word,listOfWords):
         filteredListofWords=self.filterStopWords(listOfWords)
         rankedListOfWords=self.getRankedList(filteredListofWords)
-        tabooWords=fetchTop6(rankedListOfWords)
+        tabooWords=self.fetchTop6(rankedListOfWords)
 
-
+        return tabooWords
         #return a dictionary with word as key and a list of 6 words as value
         pass
        
 
 x = uTaboo()
-print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
+word1=x.pickWord()
+print word1
+unProText=x.getUnprocessed(word1)
+
+print x.getTabooWords(word1,unProText)
+
+#print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
