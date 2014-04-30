@@ -1,0 +1,517 @@
+{
+ "kind": "customsearch#search",
+ "url": {
+  "type": "application/json",
+  "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&cref={cref?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+ },
+ "queries": {
+  "nextPage": [
+   {
+    "title": "Google Custom Search - vishnu",
+    "totalResults": "31600000",
+    "searchTerms": "vishnu",
+    "count": 10,
+    "startIndex": 11,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "008405862994369354446:bveyst4i9v0"
+   }
+  ],
+  "request": [
+   {
+    "title": "Google Custom Search - vishnu",
+    "totalResults": "31600000",
+    "searchTerms": "vishnu",
+    "count": 10,
+    "startIndex": 1,
+    "inputEncoding": "utf8",
+    "outputEncoding": "utf8",
+    "safe": "off",
+    "cx": "008405862994369354446:bveyst4i9v0"
+   }
+  ]
+ },
+ "context": {
+  "title": "visearch"
+ },
+ "searchInformation": {
+  "searchTime": 0.296399,
+  "formattedSearchTime": "0.30",
+  "totalResults": "31600000",
+  "formattedTotalResults": "31,600,000"
+ },
+ "items": [
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu - Wikipedia, the free encyclopedia",
+   "htmlTitle": "\u003cb\u003eVishnu\u003c/b\u003e - Wikipedia, the free encyclopedia",
+   "link": "http://en.wikipedia.com/wiki/Vishnu",
+   "displayLink": "en.wikipedia.com",
+   "snippet": "Vishnu is the Supreme God of Vaishnavism, one of the three main sects of \nHinduism. Vishnu is also known as Narayana and Hari. Laksmi is the wife of \nVishnu.",
+   "htmlSnippet": "\u003cb\u003eVishnu\u003c/b\u003e is the Supreme God of Vaishnavism, one of the three main sects of \u003cbr\u003e\nHinduism. \u003cb\u003eVishnu\u003c/b\u003e is also known as Narayana and Hari. Laksmi is the wife of \u003cbr\u003e\n\u003cb\u003eVishnu\u003c/b\u003e.",
+   "cacheId": "thcnAWdhZzYJ",
+   "formattedUrl": "en.wikipedia.com/wiki/Vishnu",
+   "htmlFormattedUrl": "en.wikipedia.com/wiki/\u003cb\u003eVishnu\u003c/b\u003e",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://upload.wikimedia.org/wikipedia/en/thumb/3/36/Devinuwara_Sri_Vishnu_Maha_Devalaya_in_Sri_Lanka.jpg/220px-Devinuwara_Sri_Vishnu_Maha_Devalaya_in_Sri_Lanka.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "176",
+      "height": "132",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRon1HIHsgH3pjrLnU_fwZ6LIkUXx4t_e3kufNV2gEI5k_ULwt2t8hzCi0"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "BBC - Religions - Hinduism: Vishnu",
+   "htmlTitle": "BBC - Religions - Hinduism: \u003cb\u003eVishnu\u003c/b\u003e",
+   "link": "http://bbclinksmachine.appspot.com/religion/religions/hinduism/deities/vishnu.shtml",
+   "displayLink": "bbclinksmachine.appspot.com",
+   "snippet": "Aug 24, 2009 ... Article about Vishnu, the second god in the Hindu triumvirate of Brahman, Vishnu \nand Shiva.",
+   "htmlSnippet": "Aug 24, 2009 \u003cb\u003e...\u003c/b\u003e Article about \u003cb\u003eVishnu\u003c/b\u003e, the second god in the Hindu triumvirate of Brahman, \u003cb\u003eVishnu\u003c/b\u003e \u003cbr\u003e\nand Shiva.",
+   "cacheId": "SDWDgcugMzkJ",
+   "formattedUrl": "bbclinksmachine.appspot.com/religion/religions/.../vishnu.shtml",
+   "htmlFormattedUrl": "bbclinksmachine.appspot.com/religion/religions/.../\u003cb\u003evishnu\u003c/b\u003e.shtml",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://www.bbc.co.uk/religion/religions/hinduism/deities/images/vishnu.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "120",
+      "height": "160",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR0PSej4s8hfufNdploGtKkmcg-0SipeMIjJfuhIoNB3TZEDvD126riVA"
+     }
+    ],
+    "metatags": [
+     {
+      "dcterms.created": "2006-10-20",
+      "dcterms.updated": "2009-08-24",
+      "viewport": "width = 974"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu avatars incarnations : Hindu God Vishnu Overview",
+   "htmlTitle": "\u003cb\u003eVishnu\u003c/b\u003e avatars incarnations : Hindu God \u003cb\u003eVishnu\u003c/b\u003e Overview",
+   "link": "http://www.spyfoo.com/UrlRedirector.aspx?u=-6470230603693156572&d=sanatansociety.org",
+   "displayLink": "www.spyfoo.com",
+   "snippet": "The Hindu God Vishnu is the preserver of the universe and upholds Dharma. \nThus Lord Vishnu manifests as many avatars (incarnations). pictures of Lord ...",
+   "htmlSnippet": "The Hindu God \u003cb\u003eVishnu\u003c/b\u003e is the preserver of the universe and upholds Dharma. \u003cbr\u003e\nThus Lord \u003cb\u003eVishnu\u003c/b\u003e manifests as many avatars (incarnations). pictures of Lord&nbsp;...",
+   "cacheId": "SpzhUAau_wcJ",
+   "formattedUrl": "www.spyfoo.com/UrlRedirector.aspx?u...d=sanatansociety.org",
+   "htmlFormattedUrl": "www.spyfoo.com/UrlRedirector.aspx?u...d=sanatansociety.org",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://www.sanatansociety.org/beeld/Paintings100/vishnu.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "190",
+      "height": "266",
+      "src": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQk1VAnGS3ClqFIr_BT6A35Q8f2PCe1iq2b0pt4Tm9twNNwnVigOHdQnkk"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu - ReligionFacts",
+   "htmlTitle": "\u003cb\u003eVishnu\u003c/b\u003e - ReligionFacts",
+   "link": "http://www.religionfacts.com/hinduism/deities/vishnu.htm",
+   "displayLink": "www.religionfacts.com",
+   "snippet": "Mar 17, 2005 ... Complete guide to the Hindu god Vishnu and his symbolism.",
+   "htmlSnippet": "Mar 17, 2005 \u003cb\u003e...\u003c/b\u003e Complete guide to the Hindu god \u003cb\u003eVishnu\u003c/b\u003e and his symbolism.",
+   "cacheId": "dP47tp4s8aMJ",
+   "formattedUrl": "www.religionfacts.com/hinduism/deities/vishnu.htm",
+   "htmlFormattedUrl": "www.religionfacts.com/hinduism/deities/\u003cb\u003evishnu\u003c/b\u003e.htm",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://www.religionfacts.com/hinduism/images/gods/kalki_10th_vishnu.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "152",
+      "height": "120",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3OnHSfgRbE9w5UKkFQPHfpAILdfdvGmFNoIsLkxQmdkuaiYXfwrqATA"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu (Hindu deity) -- Encyclopedia Britannica",
+   "htmlTitle": "\u003cb\u003eVishnu\u003c/b\u003e (Hindu deity) -- Encyclopedia Britannica",
+   "link": "http://www.britannica.com/EBchecked/topic/630506/Vishnu",
+   "displayLink": "www.britannica.com",
+   "snippet": "Sanskrit “The Pervader” one of the principal Hindu deities. Vishnu combines \nmany lesser divine figures and local heroes, chiefly through his avatar s, \nparticularly ...",
+   "htmlSnippet": "Sanskrit “The Pervader” one of the principal Hindu deities. \u003cb\u003eVishnu\u003c/b\u003e combines \u003cbr\u003e\nmany lesser divine figures and local heroes, chiefly through his avatar s, \u003cbr\u003e\nparticularly&nbsp;...",
+   "cacheId": "KL8UQMYo5dcJ",
+   "formattedUrl": "www.britannica.com/EBchecked/topic/630506/Vishnu",
+   "htmlFormattedUrl": "www.britannica.com/EBchecked/topic/630506/\u003cb\u003eVishnu\u003c/b\u003e",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://media-2.web.britannica.com/eb-media/09/1909-004-7536711B.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "144",
+      "height": "240",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMIE-lpjBaOiAriEmXss0-UYE2SpiNvPU5mQfDhD8_W4rq4y3BtgMnjkTW"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width, initial-scale=1.0",
+      "canonical": "http://www.britannica.com/EBchecked/topic/630506/Vishnu",
+      "og:type": "article",
+      "og:title": "Vishnu (Hindu deity)",
+      "og:description": "Sanskrit “The Pervader” one of the principal Hindu deities. Vishnu combines many lesser divine figures and local heroes, chiefly through his avatar s, particularly Rama and Krishna. His appearances are...",
+      "og:site_name": "Encyclopedia Britannica",
+      "og:url": "http://www.britannica.com/EBchecked/topic/630506/Vishnu",
+      "og:image": "http://media-2.web.britannica.com/eb-media/09/1909-004-7536711B.jpg",
+      "og:image:type": "image/jpg",
+      "next": "http://www.britannica.com/topic/630506/websites",
+      "name": "Vishnu"
+     }
+    ],
+    "Article": [
+     {
+      "url": "http://www.britannica.com/EBchecked/topic/630506/Vishnu",
+      "name": "Vishnu",
+      "about": "avatar"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu's Virtues — Heart-centered work + soul-centered living",
+   "htmlTitle": "\u003cb\u003eVishnu&#39;s\u003c/b\u003e Virtues — Heart-centered work + soul-centered living",
+   "link": "http://www.vishnusvirtues.com/",
+   "displayLink": "www.vishnusvirtues.com",
+   "snippet": "by Vishnu on March 30, 2014. How many times have you had your heart broken? \nMelanie discusses her lessons from heartbreak and how she's determined to ...",
+   "htmlSnippet": "by \u003cb\u003eVishnu\u003c/b\u003e on March 30, 2014. How many times have you had your heart broken? \u003cbr\u003e\nMelanie discusses her lessons from heartbreak and how she&#39;s determined to&nbsp;...",
+   "cacheId": "xjCWN6fmikUJ",
+   "formattedUrl": "www.vishnusvirtues.com/",
+   "htmlFormattedUrl": "www.\u003cb\u003evishnus\u003c/b\u003evirtues.com/"
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "vishnu's sounds on SoundCloud - Hear the world's sounds",
+   "htmlTitle": "\u003cb\u003evishnu&#39;s\u003c/b\u003e sounds on SoundCloud - Hear the world&#39;s sounds",
+   "link": "http://soundcloud.com/vishnu",
+   "displayLink": "soundcloud.com",
+   "snippet": "Thank you for listening! I am a sound designer and music appreciator interested \nin Ambient, Dub, Hip Hop and Jungle. Tuesday n... | Explore the largest ...",
+   "htmlSnippet": "Thank you for listening! I am a sound designer and music appreciator interested \u003cbr\u003e\nin Ambient, Dub, Hip Hop and Jungle. Tuesday n... | Explore the largest&nbsp;...",
+   "cacheId": "BdpMSL00QAUJ",
+   "formattedUrl": "soundcloud.com/vishnu",
+   "htmlFormattedUrl": "soundcloud.com/\u003cb\u003evishnu\u003c/b\u003e",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://i1.sndcdn.com/avatars-000003972530-a450b5-t500x500.jpg?77d7a69"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "225",
+      "height": "225",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSMGUjjeclYAPANkZJpEbLM5ukVNKiOO-RqFf0_Tc5aUPCTWHkJGlNcPnpa"
+     }
+    ],
+    "musicrecording": [
+     {
+      "url": "http://soundcloud.com/vishnu/synths-for-jasmin",
+      "description": "For Jasmin. Art by Niqe / Dolfinol http://niqe.deviantart.com/art/frog-and-bass-134681088",
+      "duration": "PT00H05M01S",
+      "image": "http://i1.sndcdn.com/artworks-000072925475-as5bts-crop.jpg?77d7a69",
+      "name": "Synths For Jasmin"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/juxta-pixel",
+      "description": "West Coast Hyphy Micro Juke/Footwork sound.",
+      "duration": "PT00H03M48S",
+      "image": "http://i1.sndcdn.com/artworks-000067442938-0repeq-crop.jpg?77d7a69",
+      "name": "Juxta Pixel"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/ali-behjat-guitar-drone-vishnu",
+      "description": "Original composition recorded by Ali Behjat. Artwork from Bradley James Foisset.",
+      "duration": "PT00H04M00S",
+      "image": "http://i1.sndcdn.com/artworks-000066072653-ijx3op-crop.jpg?77d7a69",
+      "name": "Ali Behjat - Guitar Drone [vishnu remix]"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/forebear-in-mind",
+      "description": "Perth footwork/jungle thing.",
+      "duration": "PT00H03M43S",
+      "image": "http://i1.sndcdn.com/artworks-000065396325-kchq1h-crop.jpg?77d7a69",
+      "name": "Forebear In Mind"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/fragments-of-ataraxia",
+      "description": "Original guitar riffs from Sandon French (HiHelo). Artwork: \"Dimensions Collide\" by Elizabeth Clary Boyd.",
+      "duration": "PT00H06M00S",
+      "image": "http://i1.sndcdn.com/artworks-000048330987-ptgngi-crop.jpg?77d7a69",
+      "name": "Fragments of Ataraxia"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/a-dream-within-a-dream",
+      "description": "This is my textural accompaniment to a poem from Edgar Allan Poe. Vocal by Acclivity. Image from John Clowder via http://revolverwinds.deviantart.com/",
+      "duration": "PT00H02M55S",
+      "image": "http://i1.sndcdn.com/artworks-000037001506-vdrwl2-crop.jpg?77d7a69",
+      "name": "a dream within a dream"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/mathas-and-vishnu-my-nation",
+      "description": "Collaboration withs: http://soundcloud.com/mathas",
+      "duration": "PT00H02M08S",
+      "image": "http://i1.sndcdn.com/artworks-000033210679-w12vx1-crop.jpg?77d7a69",
+      "name": "Mathas and vishnu - My Nation"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/lowaski-ferns-vishnu-remix",
+      "description": "Re-work of a track from Lowaski. Guitar/Thumb Piano melody composed and performed by Adam (Lowaski) Stepanovski. Artwork by David Stephenson.",
+      "duration": "PT00H03M54S",
+      "image": "http://i1.sndcdn.com/artworks-000032775977-h68f0j-crop.jpg?77d7a69",
+      "name": "Lowaski - Ferns [vishnu remix]"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/gems-roam",
+      "description": "Granulated Prog/Dub/Trip-Hop featuring vocals sampled from \"The Wailing Souls\"",
+      "duration": "PT00H04M12S",
+      "image": "http://i1.sndcdn.com/artworks-000026810133-33yyx1-crop.jpg?77d7a69",
+      "name": "Gems Roam"
+     },
+     {
+      "url": "http://soundcloud.com/vishnu/infragravity-waves-forthcoming",
+      "description": "Inspired by infinite sandbar swells. Artwork from Anna Szypszak.",
+      "duration": "PT00H05M05S",
+      "image": "http://i1.sndcdn.com/artworks-000023586546-qq5ja8-crop.jpg?77d7a69",
+      "name": "Infragravity Waves [the Community Records]"
+     }
+    ],
+    "musicgroup": [
+     {
+      "description": "Thank you for listening! I am a sound designer and music appreciator interested in Ambient, Dub, Hip Hop and Jungle. Tuesday nights tune into RTRfm 92.1 from 11-1am for Bass Check with Rekab,...",
+      "image": "http://i1.sndcdn.com/avatars-000003972530-a450b5-original.jpg?77d7a69",
+      "name": "vishnu",
+      "url": "http://soundcloud.com/vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     },
+     {
+      "name": "vishnu"
+     }
+    ],
+    "metatags": [
+     {
+      "viewport": "width=device-width",
+      "x-ua-compatible": "IE=edge,chrome=1",
+      "application-name": "SoundCloud",
+      "msapplication-tooltip": "Launch SoundCloud",
+      "msapplication-tileimage": "http://a1.sndcdn.com/images/win8.png",
+      "msapplication-tilecolor": "#ff6600",
+      "msapplication-starturl": "https://soundcloud.com",
+      "soundcloud:sound_count": "38",
+      "soundcloud:follower_count": "1932",
+      "og:type": "profile",
+      "og:url": "http://soundcloud.com/vishnu",
+      "og:title": "vishnu",
+      "og:image": "http://i1.sndcdn.com/avatars-000003972530-a450b5-t500x500.jpg?77d7a69",
+      "og:description": "Thank you for listening!     I am a sound designer and music appreciator interested in Ambient, Dub, Hip Hop and Jungle.        Tuesday nights tune...",
+      "og:locality": "Perth",
+      "og:country-name": "Australia",
+      "al:ios:url": "soundcloud://users:77321/",
+      "al:android:url": "soundcloud://users:77321/",
+      "al:ios:app_store_id": "336353151",
+      "al:ios:app_name": "SoundCloud",
+      "al:android:package": "com.soundcloud.android",
+      "al:android:app_name": "SoundCloud",
+      "fb:app_id": "19507961798",
+      "twitter:site": "soundcloud",
+      "og:site_name": "SoundCloud",
+      "twitter:card": "summary",
+      "twitter:image": "http://i1.sndcdn.com/avatars-000003972530-a450b5-t300x300.jpg?77d7a69",
+      "twitter:title": "vishnu",
+      "twitter:description": "Thank you for listening!     I am a sound designer and music appreciator interested in Ambient, Dub, Hip Hop and Jungle.        Tuesday nights tune...",
+      "twitter:app:name:iphone": "SoundCloud",
+      "twitter:app:id:iphone": "336353151",
+      "twitter:app:name:ipad": "SoundCloud",
+      "twitter:app:id:ipad": "336353151",
+      "twitter:app:name:googleplay": "SoundCloud",
+      "twitter:app:id:googleplay": "com.soundcloud.android",
+      "twitter:app:url:googleplay": "soundcloud://users:77321/",
+      "twitter:app:url:iphone": "soundcloud://users:77321/",
+      "twitter:app:url:ipad": "soundcloud://users:77321/",
+      "medium": "video",
+      "og:video:height": "242",
+      "og:video:width": "460",
+      "og:video:type": "application/x-shockwave-flash",
+      "og:video": "http://player.soundcloud.com/player.swf?url=http%3A%2F%2Fapi.soundcloud.com%2Fusers%2F77321&color=3b5998&auto_play=true&show_artwork=false&origin=facebook",
+      "twitter:player:height": "450",
+      "twitter:player:width": "435",
+      "twitter:player": "https://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Fusers%2F77321&auto_play=false&show_artwork=true&visual=true&origin=twitter"
+     }
+    ],
+    "audioobject": [
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F138518879&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F128630032&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F126134518&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F124917490&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F92744539&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F72631410&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F65457938&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F64590972&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F53123300&show_artwork=true"
+     },
+     {
+      "embedurl": "https://w.soundcloud.com/player/?visual=true&url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F46870197&show_artwork=true"
+     }
+    ],
+    "hcard": [
+     {
+      "fn": "Brett Kelly",
+      "nickname": "vishnu",
+      "photo": "http://i1.sndcdn.com/avatars-000003972530-a450b5-crop.jpg?77d7a69"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu Navda - Microsoft Research",
+   "htmlTitle": "\u003cb\u003eVishnu\u003c/b\u003e Navda - Microsoft Research",
+   "link": "http://research.microsoft.com/en-us/people/navda/",
+   "displayLink": "research.microsoft.com",
+   "snippet": "John Rula, Vishnu Navda, Fabian Bustamante, Ranjita Bhagwan, and Saikat \nGuha, No \"one-size fits all\": Towards a principled approach for incentives in \nmobile ...",
+   "htmlSnippet": "John Rula, \u003cb\u003eVishnu\u003c/b\u003e Navda, Fabian Bustamante, Ranjita Bhagwan, and Saikat \u003cbr\u003e\nGuha, No &quot;one-size fits all&quot;: Towards a principled approach for incentives in \u003cbr\u003e\nmobile&nbsp;...",
+   "cacheId": "0Q9nOf5ILlQJ",
+   "formattedUrl": "research.microsoft.com/en-us/people/navda/",
+   "htmlFormattedUrl": "research.microsoft.com/en-us/people/navda/",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://research.microsoft.com/en-us/people/navda/navda.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "172",
+      "height": "176",
+      "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQzGTPWNOIinY7BLXDl5rddN5DcEs3t8EzCGYLwRzvclUvfN1OGAb3VFwn3"
+     }
+    ],
+    "metatags": [
+     {
+      "assettype": "Web Page",
+      "og:image": "http://research.microsoft.com/en-us/people/navda/navda.jpg"
+     }
+    ]
+   }
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "Vishnu (disambiguation) - Wikipedia, the free encyclopedia",
+   "htmlTitle": "\u003cb\u003eVishnu\u003c/b\u003e (disambiguation) - Wikipedia, the free encyclopedia",
+   "link": "https://m.efollett.com/aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9WaXNobnVfKGZpbG0p",
+   "displayLink": "m.efollett.com",
+   "snippet": "Vishnu is a God in Hinduism. Vishnu may also refer to: Vishnu (1994 film), a 1994 \nMalayalam film directed by P. Sreekumar with Mammootty as the lead. Vishnu ...",
+   "htmlSnippet": "\u003cb\u003eVishnu\u003c/b\u003e is a God in Hinduism. \u003cb\u003eVishnu\u003c/b\u003e may also refer to: \u003cb\u003eVishnu\u003c/b\u003e (1994 film), a 1994 \u003cbr\u003e\nMalayalam film directed by P. Sreekumar with Mammootty as the lead. \u003cb\u003eVishnu\u003c/b\u003e&nbsp;...",
+   "cacheId": "8Ur5K82_F6IJ",
+   "formattedUrl": "https://m.efollett.com/ aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9WaXNobn...",
+   "htmlFormattedUrl": "https://m.efollett.com/ aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9WaXNobn..."
+  },
+  {
+   "kind": "customsearch#result",
+   "title": "The Online Panchangam - Dasha Avatar",
+   "htmlTitle": "The Online Panchangam - Dasha Avatar",
+   "link": "http://www.panchangam.com/dasha.htm",
+   "displayLink": "www.panchangam.com",
+   "snippet": "A brief explanation of the Hindu theological concept of ten incarnations of Vishnu. \nLinks to details of Matsya, Kurma and Varaha avatars.",
+   "htmlSnippet": "A brief explanation of the Hindu theological concept of ten incarnations of \u003cb\u003eVishnu\u003c/b\u003e. \u003cbr\u003e\nLinks to details of Matsya, Kurma and Varaha avatars.",
+   "cacheId": "RidYxG5QIVgJ",
+   "formattedUrl": "www.panchangam.com/dasha.htm",
+   "htmlFormattedUrl": "www.panchangam.com/dasha.htm",
+   "pagemap": {
+    "cse_image": [
+     {
+      "src": "http://www.panchangam.com/images/da.jpg"
+     }
+    ],
+    "cse_thumbnail": [
+     {
+      "width": "441",
+      "height": "114",
+      "src": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS2Mw5_dprIhiideN2La33P70twIY5CzOaskovpntdVNF-zc5u5UQsFZQ"
+     }
+    ],
+    "metatags": [
+     {
+      "author": "Rage Communications"
+     }
+    ]
+   }
+  }
+ ]
+}

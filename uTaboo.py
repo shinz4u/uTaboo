@@ -19,8 +19,17 @@ class uTaboo:
         
 
     def getGoogledURLS(pickedWord):
-        return urls
-        pass
+    	urls=[]
+    	searchkey="https://www.googleapis.com/customsearch/v1?key=AIzaSyA4JLIQy1RNDH_n5UNZcmc1xPGOiV2EiiM&cx=008405862994369354446:bveyst4i9v0&q="
+    	query=pickedWord
+    	response = urllib2.urlopen(searchkey+query)
+    	html = response.read()
+    	data = json.loads(html)
+    	for x in data["items"]:
+    		#print x["formattedUrl"]
+    		urls.append(x["formattedUrl"])
+    		return urls
+    	pass
         
         
     def fetchHTML(self,url):
