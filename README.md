@@ -8,4 +8,10 @@ Currently the dictionary used is  en-US.dic file. Replace it with your own list 
 
 $python uTaboo.py
 
-#result - a list structure with top six tabboed words
+result: a list with top six tabooed words
+
+
+Dependencies:
+1) Beautiful Soup v4. 
+2) ntlk toolkit
+3) Google custom search api - Add your own developer API to make it work. 
