@@ -3,14 +3,20 @@ from bs4 import BeautifulSoup
 import urllib2
 import nltk
 import operator
+import random
 class uTaboo:
 
     def __init__(self):
         pass
 
-    def pickWord(file):
-        return pickedWord
-        pass
+    def pickWord(file1='en-US.dic'):
+        dictionary = open(file1)
+        newlist=[]
+        for line in newlist:
+            newlist.append(line)
+        choice=random.choice(newlist)
+        return choice
+        
 
     def getGoogledURLS(pickedWord):
         return urls
