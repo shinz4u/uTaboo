@@ -40,3 +40,6 @@ class uTaboo:
         #return a dictionary with word as key and a list of 6 words as value
         pass
        
+
+x = uTaboo()
+print x.getRankedList([hello,shinoy,smrithi,vishnu , shinoy,radhika, shinoy,vishnu,vishnu])
