@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup
 import urllib2
 import nltk
+import operator
 class uTaboo:
 
     def __init__(self):
@@ -55,10 +56,17 @@ class uTaboo:
         pass
         
     def getRankedList(self,filteredListofWords):
-        pass
-        
+        rankedListOfWords={}
+        for i in filteredListofWords:
+            rankedListOfWords[i]=0
+        for i in filteredListofWords:
+            rankedListOfWords[i]=rankedListOfWords[i]+1
+        return rankedListOfWords
+
     def fetchTop6(rankedListOfWords):
-        pass
+        ranked = sorted(rankedListOfWords.iteritems(), key=operator.itemgetter(1),reverse=True)
+        keys=[x for (x,y) in ranked]
+        print keys[0:5]
         
     def getTabooWords(word,top6):
         #return a dictionary with word as key and a list of 6 words as value
