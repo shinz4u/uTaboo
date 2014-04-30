@@ -1,6 +1,6 @@
 class uTaboo:
 
-    def __init__:
+    def __init__(self):
         pass
 
     def pickWord(file):
@@ -30,7 +30,7 @@ class uTaboo:
     def filterStopWords(listOfWords):
         pass
         
-    def getRankedList(filteredListofWords):
+    def getRankedList(self,filteredListofWords):
         pass
         
     def fetchTop6(rankedListOfWords):
@@ -42,4 +42,4 @@ class uTaboo:
        
 
 x = uTaboo()
-print x.getRankedList([hello,shinoy,smrithi,vishnu , shinoy,radhika, shinoy,vishnu,vishnu])
+print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
