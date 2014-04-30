@@ -1,3 +1,5 @@
+
+from bs4 import BeautifulSoup
 class uTaboo:
 
     def __init__(self):
@@ -21,7 +23,8 @@ class uTaboo:
         pass
         
     def html2Text(htmlData):
-        return textData
+    	soup = BeautifulSoup(htmlData)
+        return soup.get_text()
         pass
         
    
