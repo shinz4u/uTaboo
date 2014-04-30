@@ -62,7 +62,8 @@ class uTaboo:
     # Second Module
 
     def filterStopWords(listOfWords):
-        pass
+        
+        return filteredListofWords
         
     def getRankedList(self,filteredListofWords):
         rankedListOfWords={}
@@ -74,10 +75,16 @@ class uTaboo:
 
     def fetchTop6(rankedListOfWords):
         ranked = sorted(rankedListOfWords.iteritems(), key=operator.itemgetter(1),reverse=True)
-        keys=[x for (x,y) in ranked]
-        print keys[0:5]
+        tabooWords=[x for (x,y) in ranked]
+        return tabooWords
         
-    def getTabooWords(word,top6):
+        
+    def getTabooWords(word,listOfWords):
+        filteredListofWords=self.filterStopWords(listOfWords)
+        rankedListOfWords=self.getRankedList(filteredListofWords)
+        tabooWords=fetchTop6(rankedListOfWords)
+
+
         #return a dictionary with word as key and a list of 6 words as value
         pass
        
