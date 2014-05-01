@@ -18,9 +18,7 @@ class uTaboo:
         newlist=[]
         for line in dictionary:
             newlist.append(line)
-        #print newlist
         choice1=random.choice(newlist)
-        #print choice1
         return choice1
         
 
@@ -31,11 +29,8 @@ class uTaboo:
     	response = urllib2.urlopen(searchkey+query)
 
     	html = response.read()
-    	#print html
     	data = json.loads(html)
     	for x in data["items"]:
-    		#print x["formattedUrl"]
-
     		urls.append(x["link"])
     	return urls
     	pass
@@ -57,9 +52,6 @@ class uTaboo:
      	return cleanedHtml
      	pass
         
-    def getAllhtmls(self,urls):
-        #use fetchHTML(url) to obtain a concatenated list of htmldata
-        pass
         
     def html2Text(self,htmlData):
     	soup = BeautifulSoup(htmlData)
@@ -78,25 +70,24 @@ class uTaboo:
 	    		#print neathtml
 	    		textData=textData+" " + self.html2Text(neathtml)
 
-    	#print textData
         return textData
 
     # Second Module
-
     def sanitizeWords(self,listOfWords):   # takes input text. output: split sanitized words
     	sanitized=re.sub(r'[^\w]', ' ', listOfWords)
     	sanitized=[y.lower() for y in sanitized.split()]
     	return sanitized
     	pass
    
-    
 
-    def filterStopWords(self,listOfWords1): 
+    def filterExtraWords(self,word1,listOfWords1):
+        x = [word for word in listOfWords1 if word not in stopwords.words('english')]
+        word1=word1[0:len(word1)-1]
+        otherWords=[word1,word1+'s']
+        x = [word for word in x if word not in otherWords]
+        return x
 
-    	#print listOfWords1
 
-    	#print stopwords.words('english')
-        return [word for word in listOfWords1 if word not in stopwords.words('english')]
         
     def getRankedList(self,filteredListofWords):
         rankedListOfWords={}
@@ -109,20 +100,14 @@ class uTaboo:
     def fetchTop6(self,rankedListOfWords):
         ranked = sorted(rankedListOfWords.iteritems(), key=operator.itemgetter(1),reverse=True)
         tabooWords=[x for (x,y) in ranked]
-
         return tabooWords[0:6]
         
-        
     def getTabooWords(self,word,listOfWords):
-
-        filteredListofWords=self.filterStopWords(listOfWords)
-        #print filteredListofWords
+        filteredListofWords=self.filterExtraWords(word,listOfWords)
         rankedListOfWords=self.getRankedList(filteredListofWords)
         tabooWords=self.fetchTop6(rankedListOfWords)
-
         return tabooWords
-        #return a dictionary with word as key and a list of 6 words as value
-        pass
+
        
 
 x = uTaboo()
@@ -130,7 +115,6 @@ word1=x.pickWord()
 print word1
 unProText=x.getUnprocessed(word1)
 sanitizedWords=x.sanitizeWords(unProText)
-
 print x.getTabooWords(word1,sanitizedWords)
 
 #print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
