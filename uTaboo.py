@@ -8,6 +8,7 @@ import random
 from nltk.corpus import stopwords
 import json
 import re
+import sys
 
 class uTaboo:
 
@@ -15,6 +16,8 @@ class uTaboo:
         pass
 
     def pickWord(file1='en-US.dic'):
+    	if len(sys.argv)>1:
+    		return sys.argv[1]
         dictionary = open('en-US.dic')
         newlist=[]
         for line in dictionary:
