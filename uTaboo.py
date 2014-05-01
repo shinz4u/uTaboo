@@ -77,8 +77,9 @@ class uTaboo:
     def sanitizeWords(self,listOfWords):   # takes input text. output: split sanitized words
     	lemmatizer = WordNetLemmatizer()
     	sanitized=re.sub(r'[^\w]', ' ', listOfWords)
-    	sanitized=[y.lower() for y in sanitized.split()]
+    	sanitized=[y.lower() for y in sanitized.split() if y.isdigit()!=True]  #put to lower case, remove complete numbers 
     	sanitized=[lemmatizer.lemmatize(y) for y in sanitized]   #Lemmatazation 
+
     	return sanitized
     	pass
    
