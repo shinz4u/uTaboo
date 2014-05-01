@@ -2,6 +2,7 @@
 from bs4 import BeautifulSoup
 import urllib2
 import nltk
+from nltk.stem import WordNetLemmatizer
 import operator
 import random
 from nltk.corpus import stopwords
@@ -74,8 +75,10 @@ class uTaboo:
 
     # Second Module
     def sanitizeWords(self,listOfWords):   # takes input text. output: split sanitized words
+    	lemmatizer = WordNetLemmatizer()
     	sanitized=re.sub(r'[^\w]', ' ', listOfWords)
     	sanitized=[y.lower() for y in sanitized.split()]
+    	sanitized=[lemmatizer.lemmatize(y) for y in sanitized]   #Lemmatazation 
     	return sanitized
     	pass
    
