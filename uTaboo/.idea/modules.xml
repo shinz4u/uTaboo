@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/uTaboo.iml" filepath="$PROJECT_DIR$/uTaboo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/uTabooUI/uTabooUI.iml" filepath="$PROJECT_DIR$/uTabooUI/uTabooUI.iml" />
+    </modules>
+  </component>
+</project>
+
