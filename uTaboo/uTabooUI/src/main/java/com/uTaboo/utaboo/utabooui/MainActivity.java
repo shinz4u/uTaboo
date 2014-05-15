@@ -1,12 +1,15 @@
 package com.uTaboo.utaboo.utabooui;
 
+import java.io.FileInputStream;
 import java.util.Locale;
+import java.io.File;
 
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Context;
 import android.support.v13.app.FragmentPagerAdapter;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -17,6 +20,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+
 
 
 public class MainActivity extends Activity {
@@ -51,6 +59,53 @@ public class MainActivity extends Activity {
         mViewPager = (ViewPager) findViewById(R.id.pager);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+    }
+
+    public class BufferedReaderExample {
+
+        public static void main(String[] args) {
+
+            BufferedReader br = null;
+
+            try {
+
+                String sCurrentLine;
+
+                br = new BufferedReader(new FileReader("C:\\testing.txt"));
+
+                while ((sCurrentLine = br.readLine()) != null) {
+                    System.out.println(sCurrentLine);
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                try {
+                    if (br != null)br.close();
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+        }
+    }
+    public String ReadDocument() throws Exception{
+
+
+
+       /* BufferedReader reader = new BufferedReader(new FileReader("/path/to/file.txt"));
+        String line = null;
+        while ((line = reader.readLine()) != null) {
+            // ...
+        }
+
+        String OutputWords;
+        FileInputStream fos = openFileInput("database.txt");
+        OutputWords=fos.read();
+        fos.close();
+
+        return "stuff" ;
+*/
     }
 
 
@@ -136,6 +191,7 @@ public class MainActivity extends Activity {
             return fragment;
         }
 
+
         public PlaceholderFragment() {
         }
 
@@ -144,7 +200,7 @@ public class MainActivity extends Activity {
                 Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
             TextView textView = (TextView) rootView.findViewById(R.id.section_label);
-            textView.setText(Integer.toString(getArguments().getInt(ARG_SECTION_NUMBER)));
+            textView.setText(this.ReadDocument());
             return rootView;
         }
     }

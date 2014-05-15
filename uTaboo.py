@@ -15,7 +15,7 @@ class uTaboo:
     def __init__(self):
         pass
 
-    def pickWord(file1='en-US.dic'):
+    """def pickWord(file1='en-US.dic'):
     	if len(sys.argv)>1:
     		return sys.argv[1]
         dictionary = open('en-US.dic')
@@ -23,7 +23,17 @@ class uTaboo:
         for line in dictionary:
             newlist.append(line)
         choice1=random.choice(newlist)
-        return choice1
+        return choice1"""
+
+    def pickWord(file1='en-US.dic'):
+        if len(sys.argv)>1:
+            return sys.argv[1]
+        dictionary = open('en-US.dic')
+        newlist=[]
+        for line in dictionary:
+            newlist.append(line)
+        #choice1=random.choice(newlist)
+        return newlist
         
 
     def getGoogledURLS(self,pickedWord):
@@ -120,8 +130,25 @@ class uTaboo:
 x = uTaboo()
 word1=x.pickWord()
 print word1
+f = open('database.txt', 'w')
+
+for i in word1:
+    unProText=x.getUnprocessed(i)
+    sanitizedWords=x.sanitizeWords(unProText)
+    finalWords=x.getTabooWords(i,sanitizedWords)
+    f.write(i)                                      #Looping throught ot write the words to a file. Words not being written line by line. Please Check
+    f.write(" ")
+    for y in finalWords:
+        f.write(y)
+        f.write(" ")
+    f.write('\n')
+
+"""
+
 unProText=x.getUnprocessed(word1)
 sanitizedWords=x.sanitizeWords(unProText)
 print x.getTabooWords(word1,sanitizedWords)
 
 #print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
+
+"""
