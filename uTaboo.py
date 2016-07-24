@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 
 from bs4 import BeautifulSoup
 import urllib2
@@ -15,140 +17,181 @@ class uTaboo:
     def __init__(self):
         pass
 
-    """def pickWord(file1='en-US.dic'):
-    	if len(sys.argv)>1:
-    		return sys.argv[1]
-        dictionary = open('en-US.dic')
-        newlist=[]
-        for line in dictionary:
-            newlist.append(line)
-        choice1=random.choice(newlist)
-        return choice1"""
-
-    def pickWord(file1='en-US.dic'):
-        if len(sys.argv)>1:
+    # This function picks a word from the english dictionary or as arguments
+    # while executing the program.
+    def pickWord(file1='Fruits.txt'):
+        if len(sys.argv) > 1:
             return sys.argv[1]
-        dictionary = open('en-US.dic')
-        newlist=[]
+        dictionary = open('Fruits.txt')
+        newlist = []
         for line in dictionary:
             newlist.append(line)
-        #choice1=random.choice(newlist)
         return newlist
-        
 
-    def getGoogledURLS(self,pickedWord):
-    	urls=[]
-    	searchkey="https://www.googleapis.com/customsearch/v1?key=AIzaSyA4JLIQy1RNDH_n5UNZcmc1xPGOiV2EiiM&cx=008405862994369354446:bveyst4i9v0&q="
-    	query=pickedWord
-    	response = urllib2.urlopen(searchkey+query)
+    # Returns url's of webpages for the query word from pickWord function.
+    def getGoogledURLS(self, pickedWord):
+        urls = []
+        print pickedWord
+        searchkey = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA4JLIQy1RNDH_n5UNZcmc1xPGOiV2EiiM&cx=008405862994369354446:bveyst4i9v0&q="
+        query = pickedWord
+        response = urllib2.urlopen(url = searchkey+query)
+        print response
 
-    	html = response.read()
-    	data = json.loads(html)
-    	for x in data["items"]:
-    		urls.append(x["link"])
-    	return urls
-    	pass
+        #urllib2.urlopen(url[, data[, timeout[, cafile[, capath[, cadefault[, context]]]]])
         
-        
-    def fetchHTML(self,url):
+        html = response.read()
+        data = json.loads(html)
+        for x in data["items"]:
+            urls.append(x["link"])
+        return urls
+        pass
 
-    	print url
-    	req = urllib2.Request(url)
-    	response = urllib2.urlopen(req)
-    	rawHtml = response.read()
+    # Returns rawHTML of the url's returned from getGoogledURLS for processing.
+    def fetchHTML(self, url):
+
+        print url
+        req = urllib2.Request(url)
+        response = urllib2.urlopen(req)
+        rawHtml = response.read()
         return rawHtml
         pass
 
-     	#used ntlk to remove for now. Use beautiful soup to do that as well. Details in this link
-    	# http://stackoverflow.com/questions/22799990/beatifulsoup4-get-text-still-has-javascript
-    def stripScript(self,rawHtml):
-     	cleanedHtml=nltk.clean_html(rawHtml)
-     	return cleanedHtml
-     	pass
-        
-        
-    def html2Text(self,htmlData):
-    	soup = BeautifulSoup(htmlData)
+    # Removes HTML markup
+    def stripScript(self, rawHtml):
+        soup = BeautifulSoup(rawHtml,"lxml")
+        cleanedHtml = soup.get_text()
+        return cleanedHtml
+        pass
+
+    # Cleans HTML to obtain just text
+    def html2Text(self, htmlData):
+        soup = BeautifulSoup(htmlData,"lxml")
         return soup.get_text()
         pass
 
-    def getUnprocessed(self,pickedWord):
-    	myUrls = self.getGoogledURLS(pickedWord)
-    	textData=""
-    	print myUrls
-    	for myUrl in myUrls:
-    		if myUrl.find(".pdf")==-1:
-    			print "\nopen.."
-	    		rawHtml = self.fetchHTML(myUrl)
-	    		neathtml=self.stripScript(rawHtml)
-	    		#print neathtml
-	    		textData=textData+" " + self.html2Text(neathtml)
+    # Gets text data by opening URL's and cleaning the html data to get just
+    # text.
+    def getUnprocessed(self, pickedWord):
+        print pickedWord
+        myUrls = self.getGoogledURLS(pickedWord)
+        textData = ""
+        print myUrls
+        for myUrl in myUrls:
+            if myUrl.find(".pdf") == -1:
+                print "\nopen.."
+                while True:
+                    try:
+                        rawHtml = self.fetchHTML(myUrl)
+                        neathtml = self.stripScript(rawHtml)
+                        break
+                    except urllib2.HTTPError, e:
+                        break
+
+
+                
+                # print neathtml
+                textData = textData + " " + self.html2Text(neathtml)
 
         return textData
 
-    # Second Module
-    def sanitizeWords(self,listOfWords):   # takes input text. output: split sanitized words
-    	lemmatizer = WordNetLemmatizer()
-    	sanitized=re.sub(r'[^\w]', ' ', listOfWords)
-    	sanitized=[y.lower() for y in sanitized.split() if y.isdigit()!=True]  #put to lower case, remove complete numbers 
-    	sanitized=[lemmatizer.lemmatize(y) for y in sanitized]   #Lemmatazation 
+    # Second Module 
+    # Split words based on sentences or words that makes sense. Cleans digits.
+    def sanitizeWords(self, listOfWords):
+        lemmatizer = WordNetLemmatizer()
+        sanitized = re.sub(r'[^\w]', ' ', listOfWords)
+        # put to lower case, remove complete numbers
+        sanitized = [y.lower()
+                     for y in sanitized.split() if y.isdigit() != True]
+        sanitized = [lemmatizer.lemmatize(y)
+                     for y in sanitized]  # Lemmatazation
+        return sanitized
+        pass
 
-    	return sanitized
-    	pass
-   
-
-    def filterExtraWords(self,word1,listOfWords1):
-        x = [word for word in listOfWords1 if word not in stopwords.words('english')]
-        word1=word1[0:len(word1)-1]
-        otherWords=[word1,word1+'s']
+    # Remove stopwords from data such as and, the, is, was etc.
+    def filterExtraWords(self, word1, listOfWords1):
+        x = [
+            word for word in listOfWords1 if word not in stopwords.words('english')]
+        word1 = word1[0:len(word1) - 1]
+        otherWords = [word1, word1 + 's']
         x = [word for word in x if word not in otherWords]
         return x
 
-
-        
-    def getRankedList(self,filteredListofWords):
-        rankedListOfWords={}
+    # Rank words depending upon the frequency of occurance of the words.
+    def getRankedList(self, filteredListofWords):
+        rankedListOfWords = {}
         for i in filteredListofWords:
-            rankedListOfWords[i]=0
+            rankedListOfWords[i] = 0
         for i in filteredListofWords:
-            rankedListOfWords[i]=rankedListOfWords[i]+1
+            rankedListOfWords[i] = rankedListOfWords[i] + 1
         return rankedListOfWords
 
-    def fetchTop6(self,rankedListOfWords):
-        ranked = sorted(rankedListOfWords.iteritems(), key=operator.itemgetter(1),reverse=True)
-        tabooWords=[x for (x,y) in ranked]
+    # Get the top 6 words from the list of rankedListOfWords
+    def fetchTop6(self, rankedListOfWords):
+        ranked = sorted(
+            rankedListOfWords.iteritems(),
+            key=operator.itemgetter(1),
+            reverse=True)
+        tabooWords = [x for (x, y) in ranked]
         return tabooWords[0:6]
-        
-    def getTabooWords(self,word,listOfWords):
-        filteredListofWords=self.filterExtraWords(word,listOfWords)
-        rankedListOfWords=self.getRankedList(filteredListofWords)
-        tabooWords=self.fetchTop6(rankedListOfWords)
+
+    # Get taboo words which calls all the functions.
+    def getTabooWords(self, word, listOfWords):
+        filteredListofWords = self.filterExtraWords(word, listOfWords)
+        rankedListOfWords = self.getRankedList(filteredListofWords)
+        tabooWords = self.fetchTop6(rankedListOfWords)
         return tabooWords
 
-       
-
 x = uTaboo()
-word1=x.pickWord()
+word1 = []
+word1.append(x.pickWord())
 print word1
-f = open('database.txt', 'w')
 
+with open('test.json', 'w') as f:
+    f.close()
+
+with open('test.json') as f:
+    data = json.load(f)
+#f = open('database.txt', 'w')
+count = 0
 for i in word1:
-    unProText=x.getUnprocessed(i)
-    sanitizedWords=x.sanitizeWords(unProText)
-    finalWords=x.getTabooWords(i,sanitizedWords)
-    f.write(i)                                      #Looping throught ot write the words to a file. Words not being written line by line. Please Check
+    while (count<2):
+        count += 1
+        unProText = x.getUnprocessed(i)
+        sanitizedWords = x.sanitizeWords(unProText)
+        finalWords = x.getTabooWords(i, sanitizedWords)
+        Super_Words = []
+        for k in finalWords:
+            Super_Words.append(k)
+        print Super_Words   
+        dic = {}
+        dic[i] = Super_Words
+        data.update(dic)
+        #json_file.append(json.dumps(dic))
+    '''
+    f.write(i)  # Looping throughout to write the words to a file.
     f.write(" ")
     for y in finalWords:
         f.write(y)
         f.write(" ")
     f.write('\n')
+    '''
 
-"""
+with open('test.json', 'w') as f:
+    json.dump(data, f)
 
-unProText=x.getUnprocessed(word1)
-sanitizedWords=x.sanitizeWords(unProText)
-print x.getTabooWords(word1,sanitizedWords)
+'''
+a_dict = {'new_key': 'new_value'}
 
-#print x.getRankedList(['hello','shinoy','smrithi','vishnu' , 'shinoy','radhika', 'shinoy','vishnu','vishnu'])
+with open('test.json') as f:
+    data = json.load(f)
 
-"""
+data.update(a_dict)
+
+with open('test.json', 'w') as f:
+    json.dump(data, f)
+    
+
+
+
+    '''
+
