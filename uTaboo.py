@@ -33,7 +33,7 @@ class uTaboo:
         urls = []
         print pickedWord
         searchkey = "https://www.googleapis.com/customsearch/v1?key=AIzaSyA4JLIQy1RNDH_n5UNZcmc1xPGOiV2EiiM&cx=008405862994369354446:bveyst4i9v0&q="
-        query = pickedWord
+        query = str(pickedWord)
         response = urllib2.urlopen(url = searchkey+query)
         print response
 
@@ -142,56 +142,29 @@ class uTaboo:
         return tabooWords
 
 x = uTaboo()
-word1 = []
-word1.append(x.pickWord())
+word1 = x.pickWord()
 print word1
 
-with open('test.json', 'w') as f:
-    f.close()
-
-with open('test.json') as f:
-    data = json.load(f)
-#f = open('database.txt', 'w')
 count = 0
+dic = {}
 for i in word1:
-    while (count<2):
-        count += 1
-        unProText = x.getUnprocessed(i)
-        sanitizedWords = x.sanitizeWords(unProText)
-        finalWords = x.getTabooWords(i, sanitizedWords)
-        Super_Words = []
-        for k in finalWords:
-            Super_Words.append(k)
-        print Super_Words   
-        dic = {}
-        dic[i] = Super_Words
-        data.update(dic)
-        #json_file.append(json.dumps(dic))
-    '''
-    f.write(i)  # Looping throughout to write the words to a file.
-    f.write(" ")
-    for y in finalWords:
-        f.write(y)
-        f.write(" ")
-    f.write('\n')
-    '''
+    count += 1
+    if count > 4:
+        break
+    unProText = x.getUnprocessed(i)
+    sanitizedWords = x.sanitizeWords(unProText)
+    finalWords = x.getTabooWords(i, sanitizedWords)
+    Super_Words = []
+    for k in finalWords:
+        Super_Words.append(k)
+    print Super_Words   
 
+    dic[i] = Super_Words
+
+
+jsonData = json.dumps(dic, sort_keys = True, indent = 4 ,separators= (',',':'))
+print(jsonData)
 with open('test.json', 'w') as f:
-    json.dump(data, f)
+    json.dump(jsonData, f)
 
-'''
-a_dict = {'new_key': 'new_value'}
-
-with open('test.json') as f:
-    data = json.load(f)
-
-data.update(a_dict)
-
-with open('test.json', 'w') as f:
-    json.dump(data, f)
-    
-
-
-
-    '''
 
